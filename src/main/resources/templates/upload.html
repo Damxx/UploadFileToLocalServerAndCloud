@@ -18,14 +18,36 @@
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"></script>>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.14.0/js/mdb.min.js"></script>
     <title>Upload</title>
+    <style>
+        #container{
+            position: fixed;
+            width: 500px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -250px;
+        }
+        body {
+            background-image: url("back.jpg");
+        }
+    </style>
 </head>
 <body>
 
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="files" multiple>
-    <input type="submit" value="Upload Files" multiple>
+
+<form id='container' action="/upload" enctype="multipart/form-data" method="post">
+    <div class="input-group">
+        <div class="custom-file">
+            <input  type="file" name="files" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01">
+            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+        <input style="margin-right: auto;margin-left:5%;margin-top: 0" class="btn btn-primary btn-md" type="submit" value="Submit" />
+    </div>
 </form>
+
 </body>
 </html>
