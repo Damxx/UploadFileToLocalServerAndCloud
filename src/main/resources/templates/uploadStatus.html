@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Condensed&display=swap" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <title>Upload Status</title>
+    <style>
+        #container{
+            position: fixed;
+            width: 500px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -250px;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: aliceblue;
+            text-align: center;
+        }
+        body {
+            background-image: url("back.jpg");
+        }
+    </style>
 </head>
 <body>
 <html>
 <body>
-<h1>Upload Status</h1>
-<h2>Message : ${message}</h2>
+<div id="container"
+<h1>Upload Status:</h1>
+<h2><span th:text="${message}"/></h2>
+<a th:href="@{/showFormUpload}">Upload Page</a>
+</body>
 </body>
 </html>
 </body>

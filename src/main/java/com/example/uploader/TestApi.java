@@ -15,7 +15,6 @@ import java.nio.file.Paths;
 @Controller
 public class TestApi {
 
-
     @Autowired
     UploadImage uploadImage;
 
@@ -35,17 +34,20 @@ public class TestApi {
     public String uploadPage(Model theModel){
         return "upload";
     }
+
     @RequestMapping("/upload")
     public String upload(@RequestParam("files") MultipartFile file,
                          RedirectAttributes redirectAttributes){
         if (file.isEmpty()) {
-            System.out.println("Nie ma Pliku");
+            redirectAttributes.addFlashAttribute("message","Please define your file");
             return "redirect:uploadStatus";
         }
         try {
             byte[] bytes = file.getBytes();
             java.nio.file.Path path = Paths.get("\\\\abell1\\Home\\Home\\dpadzik\\Desktop\\Stankiewicz\\" + file.getOriginalFilename());
             Files.write(path, bytes);
+            redirectAttributes.addFlashAttribute("message",
+                    "You successfully uploaded ");
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
