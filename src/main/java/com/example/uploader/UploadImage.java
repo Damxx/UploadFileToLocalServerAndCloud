@@ -14,9 +14,9 @@ public class UploadImage {
 
     public UploadImage() {
         cloudinary = new Cloudinary(ObjectUtils.asMap(
-                "cloud_name", "ddxgnvjm9",
-                "api_key", "186442611393335",
-                "api_secret", "wM35sunU9-XERdLtTE2oKoO8IG4"));
+                "cloud_name", "dzxgyzxkx",
+                "api_key", "947818954546771",
+                "api_secret", "zbDp_g9DVBF731lY2zJzeM2hlsU"));
     }
 
     public String getFileUrl(MultipartFile multipartFile) {
